@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI winText;
 
+
     void Start()
     {
         count = 0;
@@ -28,10 +29,13 @@ public class PlayerController : MonoBehaviour
         moveValue = value.Get<Vector2>();
     }
 
+    void Update()
+    {
+
+    }
     void FixedUpdate()
     {
         Vector3 movement = new Vector3(moveValue.x, 0.0f, moveValue.y);
-
         GetComponent<Rigidbody>().AddForce(movement * speed * Time.fixedDeltaTime);
     }
 
@@ -53,4 +57,6 @@ public class PlayerController : MonoBehaviour
             winText.text = "You win!";
         }
     }
+
+
 }
